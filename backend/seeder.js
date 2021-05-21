@@ -25,7 +25,7 @@ const importData = async () => {
         const adminUser = createdUsers.find(user => user.isAdmin);
 
         const sampleProducts = products.map(product => {
-            return { ...products, user: adminUser };
+            return { ...product, user: adminUser };
         });
 
         await Product.insertMany(sampleProducts);
