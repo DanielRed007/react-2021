@@ -17,7 +17,7 @@ import { listProductDetails } from "../actions/productAction";
 // import products from "../mock/products";
 
 const ProductScreen = ({ match, history }) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   // Previosly fetching data from mock
   // const product = products.find((p) => p._id === match.params.id);
   // const [product, setProduct] = useState({});
@@ -38,6 +38,7 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, match]);
 
   const addToCartHandler = () => {
+    console.log(qty);
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
